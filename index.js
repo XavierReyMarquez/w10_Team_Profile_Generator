@@ -2,8 +2,8 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const { listenerCount } = require("process");
 
-const Inter = require("./Inter");
-const Manager = require("./manager");
+const Inter = require("./lib/Inter");
+const Manager = require("./lib/manager");
 const Engineer = require("./Employee");
 // create manager function
 const PromptManager = () => {
