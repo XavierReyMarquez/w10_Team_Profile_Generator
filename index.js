@@ -1,9 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const Manager = require("./manager");
-const Engineer = require("./Employee");
 const { listenerCount } = require("process");
 
+const Inter = require("./Inter");
+const Manager = require("./manager");
+const Engineer = require("./Employee");
 // create manager function
 const PromptManager = () => {
   // put inquirer prompt to get info
@@ -77,7 +78,7 @@ const promptEmployee = (managerdata) => {
             },
             {
               type: "input",
-              email: "email",
+              name: "email",
               message: "what is the Engineer's email?",
             },
             {
@@ -96,8 +97,46 @@ const promptEmployee = (managerdata) => {
             );
             let role = { role: "Engineer" };
             managerdata.engineers.push({ ...employeeData, ...role });
-            return promptEmployee;
+            return promptEmployee(managerdata);
           });
+      } else if (role === "Inter") {
+        return inquirer
+          .prompt([
+            {
+              type: "input",
+              name: "name",
+              message: "whats the Inter's name?",
+            },
+            {
+              type: "input",
+              name: "id",
+              message: "what is the Inter's ID?",
+            },
+            {
+              type: "input",
+              name: "email",
+              message: "what is the Inter's email?",
+            },
+            {
+              type: "input",
+              name: "School",
+              message: "what is the Inter's School?",
+            },
+          ])
+          .then((employeeData) => {
+            console.log(employeeData);
+            employee = new Inter(
+              employeeData.name,
+              employeeData.id,
+              employeeData.email,
+              employeeData.school
+            );
+            let role = { role: "Inter" };
+            managerdata.inters.push({ ...employeeData, ...role });
+            return promptEmployee(managerdata);
+          });
+      } else {
+        return managerdata;
       }
     });
 };
