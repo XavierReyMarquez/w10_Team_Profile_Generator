@@ -25,7 +25,7 @@ Create a team Profile based on the infomation provide on each employee.
 
   ![A picture of the deployed application](./Assets/Screenshot%202022-04-30%20235814.png "A screenshot of an example ReadMe")
 
-  ![A gif of the deployed application](./Assets/wk10gif.mp4 "gif showing how the application runs")
+  ![A gif of the deployed application](./Assets/giphy.gif "gif showing how the application runs")
 
   ## Credits
 
@@ -33,7 +33,7 @@ Create a team Profile based on the infomation provide on each employee.
 
   ## Tests
 
-  node index.js and Test
+  node, index.js, iquirer, and Test
 
   ## License
 
