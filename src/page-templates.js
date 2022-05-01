@@ -3,7 +3,7 @@ const Manager = require("../lib/manager");
 const generateManager = (Manager) => {
   return `
     <div class="card shadow m-2 col-3">
-    <div class="card-header bg-dark ml-0 mt-1 rounded">
+    <div class="card-header bg-info ml-0 mt-1 rounded">
         <h2 class= "card-title">${Manager.name}</h2>
         <h5 class="card-text"><i class="fas fa-coffee"></i>&nbsp;${Manager.role}</h5>
     </div>
@@ -22,7 +22,7 @@ const generateEngineers = (engineersArr) => {
     ${engineersArr
       .map(({ name, id, email, github, role }) => {
         return ` <div class="card shadow m-2 col-3">
-        <div class="card-header bg-dark ml-0 mt-1 rounded">
+        <div class="card-header bg-info ml-0 mt-1 rounded">
             <h2 class= "card-title">${name}</h2>
             <h5 class="card-text"><i class="fas fa-cogs"></i>&nbsp;${role}</h5>
         </div>
@@ -46,7 +46,7 @@ const generateInterns = (internsArr) => {
       .map(({ name, id, email, school, role }) => {
         return `
             <div class="card shadow m-2 col-3">
-            <div class="card-header bg-primary ml-0 mt-1 rounded">
+            <div class="card-header bg-info ml-0 mt-1 rounded">
                 <h2 class= "card-title">${name}</h2>
                 <h5 class="card-text"><i class="fas fa-graduation-cap"></i>&nbsp;${role}</h5>
             </div>
@@ -84,7 +84,7 @@ module.exports = (templateData) => {
     </head>
   
     <body>
-        <nav class="navbar navbar-dark bg-$cyan-900 text-center">
+        <nav class="navbar navbar-dark bg-info text-center">
             <span class="navbar-brand mb-0 w-100 h1 text-white">My Team</span>
         </nav>
       <main class="container my-5">

@@ -1,6 +1,6 @@
 const Manager = require("../lib/Manager");
 
-test("creates an Manager object", () => {
+test("should creates an Manager object", () => {
   const employee = new Manager("Xavier", "23", "test@email.com", "80");
 
   expect(employee.name).toBe("Xavier");
@@ -9,7 +9,7 @@ test("creates an Manager object", () => {
   expect(employee.officeNumber).toBe("80");
 });
 
-test("gets manager's office number", () => {
+test("should gets manager's office number", () => {
   const employee = new Manager("Xavier", "23", "test@email.com", "80");
 
   expect(employee.getOfficeNumber()).toEqual(
@@ -17,7 +17,7 @@ test("gets manager's office number", () => {
   );
 });
 
-test("gets manager's role", () => {
+test("should gets manager's role", () => {
   const employee = new Manager("Xavier", "23", "test@email.com", "80");
 
   expect(employee.getRole()).toEqual(expect.stringContaining("Manager"));
