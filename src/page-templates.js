@@ -11,7 +11,7 @@ const generateManager = (Manager) => {
         <ul class="list-group list-group-flush">
             <li class="list-group-item">ID: ${Manager.id}</li>
             <li class="list-group-item">Email: <a href="mailto:${Manager.email}">${Manager.email}</a></li>
-            <li class="list-group-item">Office number: ${Manager.officeNumber}</li>
+            <li class="list-group-item">Office number: ${Manager.officeNum}</li>
         </ul>
     </div>
 </div>`;

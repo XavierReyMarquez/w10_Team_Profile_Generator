@@ -1,10 +1,12 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const { listenerCount } = require("process");
+const { writeFile, copyFile } = require("./generate-site");
+const generatePage = require("./src/page-templates");
 
 const Inter = require("./lib/Inter");
 const Manager = require("./lib/manager");
-const Engineer = require("./Employee");
+const Engineer = require("./lib/Engineer");
 // create manager function
 const PromptManager = () => {
   // put inquirer prompt to get info
@@ -119,7 +121,7 @@ const promptEmployee = (managerdata) => {
             },
             {
               type: "input",
-              name: "School",
+              name: "school",
               message: "what is the Inter's School?",
             },
           ])
@@ -141,4 +143,23 @@ const promptEmployee = (managerdata) => {
     });
 };
 
-PromptManager().then(promptEmployee);
+PromptManager()
+  .then(promptEmployee)
+  .then((managerdata) => {
+    return generatePage(managerdata);
+  })
+  .then((pageHTML) => {
+    return writeFile(pageHTML);
+  })
+  .then((writeFileResponse) => {
+    console.log("----------");
+    console.log(writeFileResponse.message);
+    return copyFile();
+  })
+  .then((copyFileResponse) => {
+    console.log(copyFileResponse.message);
+    console.log("------------------------");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
