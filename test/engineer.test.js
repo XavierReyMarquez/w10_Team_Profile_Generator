@@ -6,14 +6,14 @@ test("creates an engineer object", () => {
   expect(employee.name).toBe("Xavier");
   expect(employee.id).toBe("23");
   expect(employee.email).toBe("test@email.com");
-  expect(employee.github).toBe("Xavier");
+  expect(employee.githubUsername).toBe("Xavier");
 });
 
 test("gets employee github", () => {
   const employee = new Engineer("Xavier", "23", "test@email.com", "Xavier");
 
   expect(employee.getGithub()).toEqual(
-    expect.stringContaining(employee.github)
+    expect.stringContaining(employee.githubUsername)
   );
 });
 

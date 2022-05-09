@@ -36,7 +36,7 @@ const PromptManager = () => {
       ])
       // in the .then get results
       .then((managerdata) => {
-        console.log(managerdata);
+        // console.log(managerdata);
         const { name, id, email, officeNum } = managerdata;
         // used manger class and result to create new varaible
         employee = new Manager(name, id, email, officeNum);
